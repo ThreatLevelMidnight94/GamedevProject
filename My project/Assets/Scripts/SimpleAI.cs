@@ -7,9 +7,9 @@ public class SimpleAI : MonoBehaviour
     [SerializeField] float radius = 3f;
     [SerializeField] bool activate = false;
     [SerializeField] Transform playerTransform;
-    Movement movement;
+    movementZ movement;
     void Awake(){
-        movement = GetComponent<Movement>();
+        movement = GetComponent<movementZ>();
     }
 
     void Update(){
@@ -38,6 +38,11 @@ public class SimpleAI : MonoBehaviour
     }
 
     public void Idle(){
+       if (movement != null){
         movement.Move(Vector3.zero);
+    }
+    else{
+        Debug.LogError("movement is null in Idle method.");
+    }
     }
 }

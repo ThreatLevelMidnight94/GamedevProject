@@ -35,9 +35,13 @@ public class PlayerInput : MonoBehaviour
            
              if(Input.GetKeyDown(KeyCode.F)){
                 if (num == 0){
-                    projectile.Throw(); }
+                    GetComponent<AudioSource>().Play();
+                    projectile.Throw(); 
+                    }
                 if (num == 1){
+                   GetComponent<AudioSource>().Play();
                     projectile.Throw2();
+                    
                 }
             }
 

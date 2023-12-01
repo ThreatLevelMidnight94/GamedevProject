@@ -8,9 +8,9 @@ public class hitBox : MonoBehaviour
         [SerializeField] int hitPoint = 1;
         
         void OnTriggerEnter2D(Collider2D other){
-            Debug.Log("Step1");
+           // Debug.Log("Step1");
             if(other.GetComponent<Character>()== null){
-                Debug.Log("Step2");
+               // Debug.Log("Step2");
                 return;
                  
             }

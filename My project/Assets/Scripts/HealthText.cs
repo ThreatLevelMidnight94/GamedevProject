@@ -17,18 +17,22 @@ public class HealthText : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Health = PlayerPrefs.GetInt("Player Health");
       Healthtext.text = "Health: " + Health.ToString();
     }
         public void AddPoint(int hp){
-        
+        Health = hp;
         Healthtext.text = "Health: " + hp.ToString();
+        PlayerPrefs.SetInt("Player Health", Health);
         }
         public void SubPoint(int hp){
        /* if(Health == 0){
             SceneManager.LoadScene("Menu");
         }*/
-        
+        Health = hp;
         Healthtext.text = "Health: " + hp.ToString();
+        PlayerPrefs.SetInt("Player Health", Health);
+
         }
  
 }

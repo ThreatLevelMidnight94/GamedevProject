@@ -8,14 +8,25 @@ public class PointText : MonoBehaviour
 {
      public Text Pointtext;
     public int score = 0;
-    public static PointText instance;
+    public static PointText singleton;
 
-    private void Awake(){
+   /* private void Awake(){
         instance = this;
+    }*/
+     void Awake(){
+    if(singleton == null){
+        singleton = this;
+       
     }
+    else{
+        Destroy(this.gameObject);
+    }
+   }
+     
     // Start is called before the first frame update
     void Start()
     {
+      score = PlayerPrefs.GetInt("Player Score");
       Pointtext.text = "Score: " + score.ToString();
     }
 

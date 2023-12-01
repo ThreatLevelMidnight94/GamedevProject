@@ -8,7 +8,7 @@ public class Chest : MonoBehaviour
        // Debug.Log("Hello");
          if(other.gameObject.tag == "Player"){
             Destroy(this.gameObject);
-            PointText.instance.AddPoints();
+            PointText.singleton.AddPoints();
          }
          
        
